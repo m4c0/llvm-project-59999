@@ -1,9 +1,9 @@
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules   .\Source\Engine\Module\Reflector.cppm --precompile -o .\Intermediate\Modules\Module_temp\Reflector.pcm
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules   -fmodule-file=.\Intermediate\Modules\Module_temp\Reflector.pcm .\Intermediate\Modules\Module_temp\Reflector_interface.obj  .\Source\Engine\Module\ModuleEntry.cppm --precompile -o .\Intermediate\Modules\Module_temp\ModuleEntry.pcm
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules   -fmodule-file=.\Intermediate\Modules\Module_temp\Reflector.pcm  -fmodule-file=.\Intermediate\Modules\Module_temp\ModuleEntry.pcm --precompile -o .\Intermediate\Modules\Module.pcm .\Source\Engine\Module\Module.cppm
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Module-Reflector.pcm .\Source\Engine\Module\Reflector.cppm 
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Module-ModuleEntry.pcm .\Source\Engine\Module\ModuleEntry.cppm
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Module.pcm .\Source\Engine\Module\Module.cppm
 
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules  .\Intermediate\Modules\Module.lib .\Intermediate\Modules\Module.lib  .\Source\Engine\Object\Reflector.cppm --precompile -o .\Intermediate\Modules\Object_temp\Reflector.pcm
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules  .\Intermediate\Modules\Module.lib .\Intermediate\Modules\Module.lib  -fmodule-file=.\Intermediate\Modules\Object_temp\Reflector.pcm .\Intermediate\Modules\Object_temp\Reflector_interface.obj  .\Source\Engine\Object\NObject.cppm --precompile -o .\Intermediate\Modules\Object_temp\NObject.pcm
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules  .\Intermediate\Modules\Module.lib .\Intermediate\Modules\Module.lib  -fmodule-file=.\Intermediate\Modules\Object_temp\Reflector.pcm  -fmodule-file=.\Intermediate\Modules\Object_temp\NObject.pcm --precompile -o .\Intermediate\Modules\Object.pcm .\Source\Engine\Object\Object.cppm
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Object-Reflector.pcm .\Source\Engine\Object\Reflector.cppm 
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Object-NObject.pcm .\Source\Engine\Object\NObject.cppm 
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\Object.pcm .\Source\Engine\Object\Object.cppm
 
-clang++ -std=c++20 -fmodules  -O3  -Wall   -fprebuilt-module-path=.\Intermediate\Modules  .\Intermediate\Modules\Object.lib .\Intermediate\Modules\Object.lib --precompile -o .\Intermediate\Modules\World.pcm .\Source\Engine\World\World.cppm
+clang++ -std=c++20 -fmodules -O3 -fprebuilt-module-path=. --precompile -o .\World.pcm .\Source\Engine\World\World.cppm
