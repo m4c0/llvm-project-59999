@@ -1,4 +1,5 @@
 export module Module;
 
 export import :Reflector;
-export import :ModuleEntry;
+
+export const bool ModuleEntryRegistered = ModuleRegister<int>();
